@@ -65,7 +65,7 @@ class FinetuneDataset(Dataset):
             elif meta_ext == ".csv":
                 with open(meta_path) as f:
                     chunk = pd.read_csv(meta_path, sep='\t', engine="pyarrow")
-                    meta_l = chunk.to_dict(orient="record")
+                    meta_l = chunk.to_dict(orient="records")
             else:
                 raise NotImplementedError(
                     f"Unknown meta file extension: \"{meta_ext}\". "
